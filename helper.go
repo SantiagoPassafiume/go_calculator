@@ -16,28 +16,28 @@ func getInput(prompt string, r *bufio.Reader) (string, error) {
 func chooseOption(option string, x float64, y float64)() {
 	switch strings.ToLower(option) {
 	case "a":
-		addition()
+		addition(x,y)
 	case "s":
-		substraction()
+		substraction(x,y)
 	case "d":
-		division()
+		division(x,y)
 	case "m":
-		multiplication()
+		multiplication(x,y)
 	}
 }
 
-func addition(x float64, y float64) (float64){
-	return x + y
+func addition(x float64, y float64){
+	fmt.Printf("%v + %v = %v", x, y, x+y)
 }
 
-func substraction(x float64, y float64) (float64){
-	return x - y
+func substraction(x float64, y float64) {
+	fmt.Printf("%v + %v = %v", x, y, x+y)
 }
 
-func division(x float64, y float64) (float64){
-	return x / y
+func division(x float64, y float64) {
+	fmt.Printf("%v + %v = %v", x, y, x+y)
 }
 
-func multiplication(x float64, y float64) (float64){
-	return x * y
+func multiplication(x float64, y float64) {
+	fmt.Printf("%v + %v = %v", x, y, x+y)
 }
