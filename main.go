@@ -1,14 +1,9 @@
 package main
 
-import (
-	"bufio"
-	"os"
-)
-
 func main() {
-	reader := bufio.NewReader(os.Stdin)
+	
 
-	firstNumber, secondNumber := getNumbers(reader)
+	firstNumber, secondNumber := getNumbers()
 	parsedFirstNumber, parsedSecondNumber := parseNumbers(firstNumber, secondNumber)
 
 	chooseOption(parsedFirstNumber, parsedSecondNumber)

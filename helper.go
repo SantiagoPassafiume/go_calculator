@@ -8,9 +8,10 @@ import (
 	"strings"
 )
 
-func getNumbers(r *bufio.Reader) (string, string){
-	firstNumber, _ := getInput("Enter first number: ", r)
-	secondNumber, _ := getInput("Enter second number: ", r)
+func getNumbers() (string, string){
+	reader := bufio.NewReader(os.Stdin)
+	firstNumber, _ := getInput("Enter first number: ", reader)
+	secondNumber, _ := getInput("Enter second number: ", reader)
 
 	return firstNumber, secondNumber
 }
