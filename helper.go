@@ -35,7 +35,14 @@ func getInput(prompt string, r *bufio.Reader) (string, error) {
 func chooseOption(x float64, y float64) {
 	reader := bufio.NewReader(os.Stdin)
 
-	option, _ := getInput("a (addition) - s (substraction) - d (division) - m (multiplication): ", reader)
+	option, _ := getInput(
+		`
+a - (addition)
+s - (substraction)
+d - (division)
+m - (multiplication)
+
+Choose an option: `, reader)
 
 	switch strings.ToLower(option) {
 	case "a":
