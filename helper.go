@@ -1,9 +1,16 @@
 package main
 
-import "strings"
+import (
+	"bufio"
+	"fmt"
+	"strings"
+)
 
-func getInput() (string){
+func getInput(prompt string, r *bufio.Reader) (string, error) {
+	fmt.Print(prompt)
+	input, err := r.ReadString('\n')
 
+	return strings.TrimSpace(input), err
 }
 
 func chooseOption(option string, x float64, y float64)() {
