@@ -7,6 +7,13 @@ import (
 	"strings"
 )
 
+func getNumbers(r *bufio.Reader) (string, string){
+	firstNumber, _ := getInput("Enter first number: ", r)
+	secondNumber, _ := getInput("Enter second number: ", r)
+
+	return firstNumber, secondNumber
+}
+
 func parseNumbers(firstNumber string, secondNumber string) (float64, float64) {
 	parsedFirstNumber, _ := strconv.ParseFloat(firstNumber, 64)
 	parsedSecondNumber, _ := strconv.ParseFloat(secondNumber, 64)
