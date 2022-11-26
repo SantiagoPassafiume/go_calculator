@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"os"
-	"strconv"
 )
 
 func main() {
@@ -11,8 +10,7 @@ func main() {
 
 	firstNumber, _ := getInput("Enter first number: ", reader)
 	secondNumber, _ := getInput("Enter second number: ", reader)
-	parsedFirstNumber, _ := strconv.ParseFloat(firstNumber, 64)
-	parsedSecondNumber, _ := strconv.ParseFloat(secondNumber, 64)
+	parsedFirstNumber, parsedSecondNumber := parseNumbers(firstNumber, secondNumber)
 
 	option, _ := getInput("a (addition) - s (substraction) - d (division) - m (multiplication): ", reader)
 

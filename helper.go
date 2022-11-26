@@ -3,8 +3,16 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"strconv"
 	"strings"
 )
+
+func parseNumbers(firstNumber string, secondNumber string) (float64, float64) {
+	parsedFirstNumber, _ := strconv.ParseFloat(firstNumber, 64)
+	parsedSecondNumber, _ := strconv.ParseFloat(secondNumber, 64)
+
+	return parsedFirstNumber, parsedSecondNumber
+}
 
 func getInput(prompt string, r *bufio.Reader) (string, error) {
 	fmt.Print(prompt)
