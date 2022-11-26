@@ -6,7 +6,7 @@ func addition(x float64, y float64) {
 	fmt.Printf("%v + %v = %v", x, y, x+y)
 }
 
-func substraction(x float64, y float64) {
+func subtraction(x float64, y float64) {
 	fmt.Printf("%v - %v = %v", x, y, x-y)
 }
 

@@ -48,7 +48,7 @@ Choose an option: `, reader)
 	case "a":
 		addition(x, y)
 	case "s":
-		substraction(x, y)
+		subtraction(x, y)
 	case "d":
 		division(x, y)
 	case "m":
