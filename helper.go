@@ -13,20 +13,21 @@ func getInput(prompt string, r *bufio.Reader) (string, error) {
 	return strings.TrimSpace(input), err
 }
 
-func chooseOption(option string, x float64, y float64)() {
+func chooseOption(option string, x float64, y float64) {
+
 	switch strings.ToLower(option) {
 	case "a":
-		addition(x,y)
+		addition(x, y)
 	case "s":
-		substraction(x,y)
+		substraction(x, y)
 	case "d":
-		division(x,y)
+		division(x, y)
 	case "m":
-		multiplication(x,y)
+		multiplication(x, y)
 	}
 }
 
-func addition(x float64, y float64){
+func addition(x float64, y float64) {
 	fmt.Printf("%v + %v = %v", x, y, x+y)
 }
 
