@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func getNumbers() (string, string){
+func getNumbers() (string, string) {
 	reader := bufio.NewReader(os.Stdin)
 	firstNumber, _ := getInput("Enter first number: ", reader)
 	secondNumber, _ := getInput("Enter second number: ", reader)
@@ -30,7 +30,6 @@ func getInput(prompt string, r *bufio.Reader) (string, error) {
 	return strings.TrimSpace(input), err
 }
 
-
 func chooseOption(x float64, y float64) {
 	reader := bufio.NewReader(os.Stdin)
 
@@ -50,5 +49,3 @@ func chooseOption(x float64, y float64) {
 		chooseOption(x, y)
 	}
 }
-
-
