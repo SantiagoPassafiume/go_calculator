@@ -8,17 +8,19 @@ import (
 	"strings"
 )
 
-func getNumbers() (string, string) {
+func getNumbers() (float64, float64) {
 	reader := bufio.NewReader(os.Stdin)
+
 	firstNumber, _ := getInput("Enter first number: ", reader)
 	secondNumber, _ := getInput("Enter second number: ", reader)
 
-	return firstNumber, secondNumber
-}
+	parsedFirstNumber, err1 := strconv.ParseFloat(firstNumber, 64)
+	parsedSecondNumber, err2 := strconv.ParseFloat(secondNumber, 64)
 
-func parseNumbers(firstNumber string, secondNumber string) (float64, float64) {
-	parsedFirstNumber, _ := strconv.ParseFloat(firstNumber, 64)
-	parsedSecondNumber, _ := strconv.ParseFloat(secondNumber, 64)
+	if err1 != nil || err2 != nil {
+		fmt.Println("You entered an invalid number, please try again.")
+		getNumbers()
+	}
 
 	return parsedFirstNumber, parsedSecondNumber
 }
