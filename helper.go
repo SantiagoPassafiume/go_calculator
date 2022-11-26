@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -28,7 +29,11 @@ func getInput(prompt string, r *bufio.Reader) (string, error) {
 	return strings.TrimSpace(input), err
 }
 
-func chooseOption(option string, x float64, y float64) {
+
+func chooseOption(x float64, y float64) {
+	reader := bufio.NewReader(os.Stdin)
+
+	option, _ := getInput("a (addition) - s (substraction) - d (division) - m (multiplication): ", reader)
 
 	switch strings.ToLower(option) {
 	case "a":
@@ -39,6 +44,9 @@ func chooseOption(option string, x float64, y float64) {
 		division(x, y)
 	case "m":
 		multiplication(x, y)
+	default:
+		fmt.Println("Please enter a valid option.")
+		chooseOption(x, y)
 	}
 }
 
